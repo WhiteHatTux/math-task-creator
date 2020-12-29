@@ -26,9 +26,6 @@ dependencies {
 kotlin {
     js(IR) {
         browser {
-            dceTask {
-                keep("ktor-ktor-io.\$\$importsForInline\$\$.ktor-ktor-io.io.ktor.utils.io")
-            }
             binaries.executable()
             webpackTask {
                 cssSupport.enabled = true

@@ -10,8 +10,12 @@ import react.dom.tr
 import styled.css
 import styled.styledDiv
 
+@ExperimentalJsExport
+@JsExport
 class SimpleCalculationProps(var taskNumber: Number, var basicCalculation: () -> BasicCalculation) : RProps
 
+@ExperimentalJsExport
+@JsExport
 class SimpleCalculation(props: SimpleCalculationProps) : RComponent<SimpleCalculationProps, RState>(props) {
     override fun RBuilder.render() {
         var c = 'a'

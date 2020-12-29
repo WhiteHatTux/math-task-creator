@@ -8,8 +8,12 @@ import react.dom.b
 import react.dom.br
 import react.dom.p
 
+@ExperimentalJsExport
+@JsExport
 class CalculationComponentProps(var text: String) : RProps
 
+@ExperimentalJsExport
+@JsExport
 class CalculationComponent(props: CalculationComponentProps) : RComponent<CalculationComponentProps, RState>(props) {
     override fun RBuilder.render() {
         p {
