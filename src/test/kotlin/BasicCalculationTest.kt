@@ -30,7 +30,7 @@ class BasicCalculationTest {
         println("expectedResult: " + basicCalculation.expectedResult)
         println("expectedCent: " + basicCalculation.expectedCent)
         assertTrue("first number is not in expected Range") { basicCalculation.first <= 20 }
-        assertTrue("second number is not in expected Range") { basicCalculation.second <= 19 }
+        assertTrue("second number is not in expected Range") { basicCalculation.second <= 20 }
         assertTrue("result is negative") { basicCalculation.first - basicCalculation.second >= 0 }
         assertTrue("result is not correct") {
             ((basicCalculation.first - basicCalculation.second).toFloat() - basicCalculation.secondCent.toFloat() / 100)
