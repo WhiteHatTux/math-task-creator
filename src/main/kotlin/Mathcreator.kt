@@ -21,14 +21,14 @@ class MathCreator(props: RProps) : RComponent<RProps, RState>(props) {
         val month: Int = Date().getMonth() + 1
         val now = Date().getFullYear().toString() + "-" + month + "-" + Date().getDate()
         document.title = "Generator für Matheaufgaben vom $now"
-        val simpleTaskRepetition = 4
+        val simpleTaskRepetition = 3
         val complexTaskRepetition = 1
         val taskNumber: AtomicInt = atomic(1)
 
         newSimpleCalculationIteration(simpleTaskRepetition, taskNumber) { BasicCalculation.simpleAddition(20) }
         newSimpleCalculationIteration(simpleTaskRepetition, taskNumber) { BasicCalculation.complexAddition(20) }
         newSimpleCalculationIteration(simpleTaskRepetition, taskNumber) { BasicCalculation.simpleResting(20) }
-        newSimpleCalculationIteration(1, taskNumber) { BasicCalculation.complexResting(20) }
+        newSimpleCalculationIteration(2, taskNumber) { BasicCalculation.complexResting(20) }
         repeat(complexTaskRepetition) {
             child(CalculationComponent::class) {
                 attrs.text = newRestMoneyTask(taskNumber.getAndIncrement())
