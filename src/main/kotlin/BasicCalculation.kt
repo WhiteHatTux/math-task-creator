@@ -73,5 +73,11 @@ class BasicCalculation(var first: Int, var second: Int, var secondCent: Int, var
 
             return BasicCalculation(first, second, cent, first + second, cent, "+")
         }
+
+        fun simpleMultiplication(maxNumber: Int): BasicCalculation {
+            val first = Random.nextInt(1, maxNumber)
+            val second = Random.nextInt(1, maxNumber)
+            return BasicCalculation(first, second, 0, first * second, 0, "x")
+        }
     }
 }

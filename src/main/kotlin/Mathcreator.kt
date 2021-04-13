@@ -25,9 +25,10 @@ class MathCreator(props: RProps) : RComponent<RProps, RState>(props) {
         val complexTaskRepetition = 1
         val taskNumber: AtomicInt = atomic(1)
 
-        newSimpleCalculationIteration(simpleTaskRepetition, taskNumber) { BasicCalculation.simpleAddition(20) }
+        newSimpleCalculationIteration(2, taskNumber) { BasicCalculation.simpleAddition(20) }
         newSimpleCalculationIteration(simpleTaskRepetition, taskNumber) { BasicCalculation.complexAddition(20) }
-        newSimpleCalculationIteration(simpleTaskRepetition, taskNumber) { BasicCalculation.simpleResting(20) }
+        newSimpleCalculationIteration(2, taskNumber) { BasicCalculation.simpleResting(20) }
+        newSimpleCalculationIteration(simpleTaskRepetition, taskNumber) { BasicCalculation.simpleMultiplication(10) }
         newSimpleCalculationIteration(2, taskNumber) { BasicCalculation.complexResting(20) }
         repeat(complexTaskRepetition) {
             child(CalculationComponent::class) {
