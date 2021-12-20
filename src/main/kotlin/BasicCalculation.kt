@@ -66,6 +66,13 @@ class BasicCalculation(var first: Int, var second: Int, var secondCent: Int, var
             return BasicCalculation(first, second, 0, first + second, 0, "+")
         }
 
+        fun simpleHighRangeAddition(maxNumber: Int): BasicCalculation {
+            val first = Random.nextInt(1, maxNumber)
+            val second = Random.nextInt(1, maxNumber)
+
+            return BasicCalculation(first, second, 0, first + second, 0, "+")
+        }
+
         fun complexAddition(maxNumber: Int): BasicCalculation {
             val first = Random.nextInt(1, maxNumber)
             val second = Random.nextInt(1, maxNumber - 1)
@@ -74,10 +81,17 @@ class BasicCalculation(var first: Int, var second: Int, var secondCent: Int, var
             return BasicCalculation(first, second, cent, first + second, cent, "+")
         }
 
-        fun simpleMultiplication(maxNumber: Int): BasicCalculation {
-            val first = Random.nextInt(1, maxNumber)
-            val second = Random.nextInt(1, maxNumber)
+        fun simpleMultiplication(maxNumberFirst: Int, maxNumberSecond: Int): BasicCalculation {
+            val first = Random.nextInt(1, maxNumberFirst)
+            val second = Random.nextInt(1, maxNumberSecond)
             return BasicCalculation(first, second, 0, first * second, 0, "x")
+        }
+
+        fun simpleDivision(maxNumberForFactors: Int): BasicCalculation {
+
+            val firstFactor = Random.nextInt(1, maxNumberForFactors)
+            val secondFactor = Random.nextInt(1, maxNumberForFactors)
+            return BasicCalculation(firstFactor * secondFactor, secondFactor, 0, firstFactor, 0, ":")
         }
     }
 }

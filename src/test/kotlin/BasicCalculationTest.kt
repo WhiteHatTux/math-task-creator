@@ -78,7 +78,7 @@ class BasicCalculationTest {
 
     @Test
     fun getConsistentNumbersForSimpleMultiplication() {
-        val basicCalculation = BasicCalculation.simpleMultiplication(10)
+        val basicCalculation = BasicCalculation.simpleMultiplication(10, 10)
         println("first: " + basicCalculation.first)
         println("second: " + basicCalculation.second)
         println("secondCent: " + basicCalculation.secondCent)
@@ -87,6 +87,19 @@ class BasicCalculationTest {
         assertTrue("first number is not in expected Range") { basicCalculation.first <= 10 }
         assertTrue("second number is not in expected Range") { basicCalculation.second <= 10 }
         assertTrue("result is negative") { basicCalculation.first * basicCalculation.second in 1..100 }
-        assertEquals(basicCalculation.expectedResult, basicCalculation.first * basicCalculation.second, "result is not correct")
+        assertEquals(basicCalculation.first * basicCalculation.second, basicCalculation.expectedResult, "result is not correct")
+    }
+
+    @Test
+    fun getConsistentNumbersForSimpleDivision() {
+        val basicCalculation = BasicCalculation.simpleDivision(10)
+        println("first: " + basicCalculation.first)
+        println("second: " + basicCalculation.second)
+        println("secondCent: " + basicCalculation.secondCent)
+        println("expectedResult: " + basicCalculation.expectedResult)
+        println("expectedCent: " + basicCalculation.expectedCent)
+        assertTrue("first number is not in expected Range") { basicCalculation.first <= 100 }
+        assertTrue("second number is not in expected Range") { basicCalculation.second <= 10 }
+        assertEquals(basicCalculation.first / basicCalculation.second, basicCalculation.expectedResult, "result is not correct")
     }
 }
